@@ -1,14 +1,52 @@
 {
     "name": "draperstudio/laravel-settings",
+    "type": "library",
     "description": "Persistent Settings with multiple Drivers for Laravel 5",
+    "keywords": [
+        "draperstudio",
+        "laravel-settings"
+    ],
+    "homepage": "https://github.com/DraperStudio/laravel-settings",
+    "license": "MIT",
+    "authors": [{
+        "name": "DraperStudio",
+        "email": "hello@draperstudio.tech",
+        "homepage": "http://draperstudio.tech",
+        "role": "Developer"
+    }],
     "require": {
-        "php": ">=5.5.9",
-        "draperstudio/laravel-service-provider": "^1.0",
-        "draperstudio/payload": "^1.0"
+        "php": "^5.6 || ^7.0",
+        "draperstudio/laravel-service-provider": "^0.1",
+        "draperstudio/payload": "^0.1"
+    },
+    "require-dev": {
+        "graham-campbell/testbench": "^3.1",
+        "mockery/mockery": "^0.9.4",
+        "phpunit/phpunit": "^5.0",
+        "scrutinizer/ocular": "~1.1",
+        "squizlabs/php_codesniffer": "~2.3"
     },
     "autoload": {
         "psr-4": {
             "DraperStudio\\Settings\\": "src/"
         }
-    }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DraperStudio\\Tests\\Settings\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

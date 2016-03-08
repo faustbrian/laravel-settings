@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Laravel Settings.
+ *
+ * (c) DraperStudio <hello@draperstudio.tech>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DraperStudio\Settings;
 
 use DraperStudio\Cerealizer\Serialisers\JsonSerialiser;
@@ -17,13 +26,24 @@ use DraperStudio\Settings\Store\YamlInlineStore;
 use DraperStudio\Settings\Store\YamlStore;
 use Illuminate\Support\Manager;
 
+/**
+ * Class SettingsManager.
+ *
+ * @author DraperStudio <hello@draperstudio.tech>
+ */
 class SettingsManager extends Manager
 {
+    /**
+     * @return mixed
+     */
     public function getDefaultDriver()
     {
         return $this->getConfig('settings.store');
     }
 
+    /**
+     * @return JsonStore
+     */
     public function createJsonDriver()
     {
         $path = $this->getConfig('settings.path');
@@ -33,6 +53,9 @@ class SettingsManager extends Manager
         );
     }
 
+    /**
+     * @return XmlStore
+     */
     public function createXmlDriver()
     {
         $path = $this->getConfig('settings.path');
@@ -42,6 +65,9 @@ class SettingsManager extends Manager
         );
     }
 
+    /**
+     * @return YamlStore
+     */
     public function createYamlDriver()
     {
         $path = $this->getConfig('settings.path');
@@ -51,6 +77,9 @@ class SettingsManager extends Manager
         );
     }
 
+    /**
+     * @return YamlInlineStore
+     */
     public function createYamlInlineDriver()
     {
         $path = $this->getConfig('settings.path');
@@ -60,6 +89,9 @@ class SettingsManager extends Manager
         );
     }
 
+    /**
+     * @return DatabaseStore
+     */
     public function createDatabaseDriver()
     {
         $connection = $this->app['db']->connection();
@@ -68,11 +100,19 @@ class SettingsManager extends Manager
         return new DatabaseStore($connection, $table);
     }
 
+    /**
+     * @return MemoryStore
+     */
     public function createMemoryDriver()
     {
         return new MemoryStore();
     }
 
+    /**
+     * @param $key
+     *
+     * @return mixed
+     */
     protected function getConfig($key)
     {
         return $this->app['config']->get($key);

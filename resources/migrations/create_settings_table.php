@@ -4,8 +4,16 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
+/**
+ * Class CreateSettingsTable.
+ *
+ * @author DraperStudio <hello@draperstudio.tech>
+ */
 class CreateSettingsTable extends Migration
 {
+    /**
+     *
+     */
     public function up()
     {
         Schema::create('settings', function (Blueprint $table) {
@@ -16,6 +24,9 @@ class CreateSettingsTable extends Migration
         });
     }
 
+    /**
+     *
+     */
     public function down()
     {
         Schema::drop('settings');

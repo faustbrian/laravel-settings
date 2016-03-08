@@ -9,14 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace DraperStudio\Settings\Store;
+namespace DraperStudio\Tests\Settings;
+
+use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
 
 /**
- * Class YamlInlineStore.
+ * This is the service provider test class.
  *
  * @author DraperStudio <hello@draperstudio.tech>
  */
-class YamlInlineStore extends FileStore
+class ServiceProviderTest extends AbstractTestCase
 {
-    //
+    use ServiceProviderTrait;
 }

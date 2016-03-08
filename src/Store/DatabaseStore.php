@@ -1,30 +1,68 @@
 <?php
 
+/*
+ * This file is part of Laravel Settings.
+ *
+ * (c) DraperStudio <hello@draperstudio.tech>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DraperStudio\Settings\Store;
 
 use Illuminate\Database\Connection;
 
+/**
+ * Class DatabaseStore.
+ *
+ * @author DraperStudio <hello@draperstudio.tech>
+ */
 class DatabaseStore extends Store
 {
+    /**
+     * @var Connection
+     */
     protected $connection;
 
+    /**
+     * @var
+     */
     protected $table;
 
+    /**
+     * @var
+     */
     protected $queryConstraint;
 
+    /**
+     * @var array
+     */
     protected $extraColumns = [];
 
+    /**
+     * DatabaseStore constructor.
+     *
+     * @param Connection $connection
+     * @param $table
+     */
     public function __construct(Connection $connection, $table)
     {
         $this->connection = $connection;
         $this->table = $table;
     }
 
+    /**
+     * @param $table
+     */
     public function setTable($table)
     {
         $this->table = $table;
     }
 
+    /**
+     * @param \Closure $callback
+     */
     public function setConstraint(\Closure $callback)
     {
         $this->data = [];
@@ -32,11 +70,17 @@ class DatabaseStore extends Store
         $this->queryConstraint = $callback;
     }
 
+    /**
+     * @param array $columns
+     */
     public function setExtraColumns(array $columns)
     {
         $this->extraColumns = $columns;
     }
 
+    /**
+     * @param $key
+     */
     public function forget($key)
     {
         parent::forget($key);
@@ -60,6 +104,9 @@ class DatabaseStore extends Store
         }
     }
 
+    /**
+     * @param array $data
+     */
     protected function write(array $data)
     {
         $keys = $this->newQuery()->lists('key');
@@ -96,6 +143,11 @@ class DatabaseStore extends Store
         }
     }
 
+    /**
+     * @param array $data
+     *
+     * @return array
+     */
     protected function prepareInsertData(array $data)
     {
         $dbData = [];
@@ -115,11 +167,19 @@ class DatabaseStore extends Store
         return $dbData;
     }
 
+    /**
+     * @return array
+     */
     protected function read()
     {
         return $this->parseReadData($this->newQuery()->get());
     }
 
+    /**
+     * @param $data
+     *
+     * @return array
+     */
     public function parseReadData($data)
     {
         $results = [];
@@ -142,6 +202,11 @@ class DatabaseStore extends Store
         return $results;
     }
 
+    /**
+     * @param bool $insert
+     *
+     * @return \Illuminate\Database\Query\Builder
+     */
     protected function newQuery($insert = false)
     {
         $query = $this->connection->table($this->table);

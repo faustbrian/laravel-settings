@@ -1,17 +1,43 @@
 <?php
 
+/*
+ * This file is part of Laravel Settings.
+ *
+ * (c) DraperStudio <hello@draperstudio.tech>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DraperStudio\Settings\Store;
 
 use DraperStudio\Settings\Contracts\Store as StoreContract;
 
+/**
+ * Class Store.
+ *
+ * @author DraperStudio <hello@draperstudio.tech>
+ */
 abstract class Store implements StoreContract
 {
+    /**
+     * @var array
+     */
     protected $storage = [];
 
+    /**
+     * @var bool
+     */
     protected $modified = false;
 
+    /**
+     * @var bool
+     */
     protected $loaded = false;
 
+    /**
+     * @return array
+     */
     public function all()
     {
         $this->checkLoaded();
@@ -19,6 +45,11 @@ abstract class Store implements StoreContract
         return $this->storage;
     }
 
+    /**
+     * @param $key
+     *
+     * @return bool
+     */
     public function has($key)
     {
         $this->checkLoaded();
@@ -26,6 +57,11 @@ abstract class Store implements StoreContract
         return !is_null($this->get($key));
     }
 
+    /**
+     * @param $key
+     *
+     * @return mixed
+     */
     public function get($key)
     {
         $this->checkLoaded();
@@ -35,6 +71,10 @@ abstract class Store implements StoreContract
         }
     }
 
+    /**
+     * @param $key
+     * @param null $value
+     */
     public function put($key, $value = null)
     {
         $this->checkLoaded();
@@ -49,6 +89,11 @@ abstract class Store implements StoreContract
         }
     }
 
+    /**
+     * @param $key
+     *
+     * @return bool
+     */
     public function forget($key)
     {
         $this->modified = true;
@@ -60,12 +105,18 @@ abstract class Store implements StoreContract
         return true;
     }
 
+    /**
+     *
+     */
     public function flush()
     {
         $this->storage = [];
         $this->modified = true;
     }
 
+    /**
+     *
+     */
     public function save()
     {
         if (!$this->modified) {
@@ -76,6 +127,9 @@ abstract class Store implements StoreContract
         $this->modified = false;
     }
 
+    /**
+     *
+     */
     private function checkLoaded()
     {
         if (!$this->modified) {
@@ -84,7 +138,15 @@ abstract class Store implements StoreContract
         }
     }
 
+    /**
+     * @return mixed
+     */
     abstract protected function read();
 
+    /**
+     * @param array $storage
+     *
+     * @return mixed
+     */
     abstract protected function write(array $storage);
 }

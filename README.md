@@ -1,25 +1,23 @@
 # Laravel Settings
 
-Based on [laravel-settings](https://github.com/anlutro/laravel-settings) by [anlutro](https://github.com/anlutro).
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Software License][ico-license]](LICENSE.md)
+[![Build Status][ico-travis]][link-travis]
+[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
+[![Quality Score][ico-code-quality]][link-code-quality]
+[![Total Downloads][ico-downloads]][link-downloads]
 
-## New Features
+## Install
 
-- JsonStore **(Updated)**
-- XmlStore
-- YamlStore
-- YamlInlineStore
+Via Composer
 
-## Installation
-
-First, pull in the package through Composer.
-
-```js
-composer require draperstudio/laravel-settings:1.0.*@dev
+``` bash
+$ composer require draperstudio/laravel-settings
 ```
 
 And then, if using Laravel 5, include the service provider within `app/config/app.php`.
 
-```php
+``` php
 'providers' => [
     // ... Illuminate Providers
     // ... App Providers
@@ -29,7 +27,7 @@ And then, if using Laravel 5, include the service provider within `app/config/ap
 
 And, for convenience, add a facade alias to this same file at the bottom:
 
-```php
+``` php
 'aliases' => [
     // ... Illuminate Facades
     'Setting' => DraperStudio\Settings\Facades\Setting::class
@@ -65,36 +63,78 @@ $ php artisan migrate
 ## Usage
 
 ##### Get all settings
-```php
+``` php
 Setting::all();
 ```
 
 ##### Check if a setting exists
-```php
+``` php
 Setting::has($key);
 ```
 
 ##### Get a setting
-```php
+``` php
 Setting::get($key);
 ```
 
 ##### Set a setting
-```php
+``` php
 Setting::put($key, $value);
 ```
 
 ##### Delete a setting
-```php
+``` php
 Setting::forget($key);
 ```
 
 ##### Delete all settings
-```php
+``` php
 Setting::flush();
 ```
 
-## To-Do
+## Change log
+
+Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+
+## Testing
+
+``` bash
+$ composer test
+```
+
+## Contributing
+
+Please see [CONTRIBUTING](.github/CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
+
+## Security
+
+If you discover any security related issues, please email hello@draperstudio.tech instead of using the issue tracker.
+
+## Credits
+
+- [DraperStudio][link-author]
+- [All Contributors][link-contributors]
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+[ico-version]: https://img.shields.io/packagist/v/DraperStudio/laravel-settings.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/DraperStudio/Laravel-Settings/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/DraperStudio/laravel-settings.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/DraperStudio/laravel-settings.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/DraperStudio/laravel-settings.svg?style=flat-square
+
+[link-packagist]: https://packagist.org/packages/DraperStudio/laravel-settings
+[link-travis]: https://travis-ci.org/DraperStudio/Laravel-Settings
+[link-scrutinizer]: https://scrutinizer-ci.com/g/DraperStudio/laravel-settings/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/DraperStudio/laravel-settings
+[link-downloads]: https://packagist.org/packages/DraperStudio/laravel-settings
+[link-author]: https://github.com/DraperStudio
+[link-contributors]: ../../contributors
+
+<!-- ## To-Do
 - Drivers
     - Redis
     - Session **(maybe)**
@@ -104,8 +144,4 @@ Setting::flush();
     - Setting::yaml()->get($key);
     - Setting::yaml()->put($key, $value);
     - Setting::yaml()->forget($key);
-    - Setting::yaml()->flush();
-
-## License
-
-Laravel Settings is licensed under [The MIT License (MIT)](LICENSE).
+    - Setting::yaml()->flush(); -->
