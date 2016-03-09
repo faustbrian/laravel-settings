@@ -105,18 +105,12 @@ abstract class Store implements StoreContract
         return true;
     }
 
-    /**
-     *
-     */
     public function flush()
     {
         $this->storage = [];
         $this->modified = true;
     }
 
-    /**
-     *
-     */
     public function save()
     {
         if (!$this->modified) {
@@ -127,9 +121,6 @@ abstract class Store implements StoreContract
         $this->modified = false;
     }
 
-    /**
-     *
-     */
     private function checkLoaded()
     {
         if (!$this->modified) {

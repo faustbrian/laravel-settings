@@ -52,6 +52,7 @@ class ServiceProvider extends \DraperStudio\ServiceProvider\ServiceProvider
     {
         return array_merge(parent::provides(), ['settings-manager']);
     }
+
     /**
      * Get the default package name.
      *

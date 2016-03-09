@@ -11,7 +11,6 @@
 
 namespace DraperStudio\Settings\Facades;
 
-use DraperStudio\Settings\SettingsManager;
 use Illuminate\Support\Facades\Facade;
 
 /**
