@@ -1,24 +1,15 @@
 {
     "name": "faustbrian/laravel-settings",
     "description": "Persistent Settings with multiple Drivers for Laravel 5",
-    "keywords": [
-        "laravel",
-        "framework",
-        "Laravel-messageable",
-        "Laravel Messageable",
-        "Brian Faust",
-        "faustbrian",
-        "laravel-settings"
-    ],
+    "keywords": ["laravel", "framework", "Laravel-settings", "Laravel settings", "Brian Faust", "faustbrian"],
     "license": "MIT",
     "authors": [{
         "name": "Brian Faust",
         "email": "hello@brianfaust.de",
-        "homepage": "https://brianfaust.de",
-        "role": "Developer"
+        "homepage": "https://brianfaust.de"
     }],
     "require": {
-        "php": "^5.6.4 || ^7.0",
+        "php": "^7.0",
         "faustbrian/laravel-service-provider": "^1.0",
         "faustbrian/payload": "^1.0"
     },
