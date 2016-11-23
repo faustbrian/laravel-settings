@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Laravel Settings.
+ *
+ * (c) Brian Faust <hello@brianfaust.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace BrianFaust\Settings\Store;
 
 use Illuminate\Filesystem\Filesystem;
@@ -34,7 +43,7 @@ abstract class FileStore extends Store
 
     private function setPath($path)
     {
-        if (!$this->files->exists($path)) {
+        if (! $this->files->exists($path)) {
             $result = $this->files->put($path, '');
 
             if ($result === false) {
@@ -42,7 +51,7 @@ abstract class FileStore extends Store
             }
         }
 
-        if (!$this->files->isWritable($path)) {
+        if (! $this->files->isWritable($path)) {
             throw new NotWriteableException("$path is not writable.");
         }
 
