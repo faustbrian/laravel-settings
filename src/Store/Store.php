@@ -32,7 +32,7 @@ abstract class Store implements StoreContract
     {
         $this->checkLoaded();
 
-        return ! is_null($this->get($key));
+        return !is_null($this->get($key));
     }
 
     public function get($key)
@@ -77,7 +77,7 @@ abstract class Store implements StoreContract
 
     public function save()
     {
-        if (! $this->modified) {
+        if (!$this->modified) {
             return;
         }
 
@@ -87,7 +87,7 @@ abstract class Store implements StoreContract
 
     private function checkLoaded()
     {
-        if (! $this->modified) {
+        if (!$this->modified) {
             $this->storage = json_decode(json_encode($this->read()), true);
             $this->modified = true;
         }

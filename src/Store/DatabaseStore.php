@@ -155,7 +155,7 @@ class DatabaseStore extends Store
     {
         $query = $this->connection->table($this->table);
 
-        if (! $insert) {
+        if (!$insert) {
             foreach ($this->extraColumns as $key => $value) {
                 $query->where($key, '=', $value);
             }
