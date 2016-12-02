@@ -11,7 +11,9 @@
 
 namespace BrianFaust\Settings;
 
-class ServiceProvider extends \BrianFaust\ServiceProvider\ServiceProvider
+use BrianFaust\ServiceProvider\ServiceProvider;
+
+class SettingsServiceProvider extends ServiceProvider
 {
     public function boot()
     {
@@ -26,7 +28,6 @@ class ServiceProvider extends \BrianFaust\ServiceProvider\ServiceProvider
 
         $this->mergeConfig();
 
-        // $this->app->singleton(SettingsManager::class, function ($app) {
         $this->app->singleton('settings-manager', function ($app) {
             return new SettingsManager($app);
         });
