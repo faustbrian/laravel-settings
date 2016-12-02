@@ -11,20 +11,13 @@ $ composer require faustbrian/laravel-settings
 And then include the service provider within `app/config/app.php`.
 
 ``` php
-'providers' => [
-    // ... Illuminate Providers
-    // ... App Providers
-    BrianFaust\Settings\ServiceProvider::class
-];
+BrianFaust\Settings\SettingsServiceProvider::class
 ```
 
 And, for convenience, add a facade alias to this same file at the bottom:
 
 ``` php
-'aliases' => [
-    // ... Illuminate Facades
-    'Setting' => BrianFaust\Settings\Facades\Setting::class
-];
+'Setting' => BrianFaust\Settings\Facades\Setting
 ```
 
 ## Configuration
@@ -34,7 +27,7 @@ Laravel Settings supports optional configuration.
 To get started, you'll need to publish all configurations:
 
 ```bash
-$ php artisan vendor:publish --provider="BrianFaust\Settings\ServiceProvider" --tag="config"
+$ php artisan vendor:publish --provider="BrianFaust\Settings\SettingsServiceProvider" --tag="config"
 ```
 
 This will create a `config/settings.php` file in your app that you can modify to set your configuration. Also, make sure you check for changes to the original config file in this package between releases.
