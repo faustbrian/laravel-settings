@@ -9,20 +9,22 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace BrianFaust\Settings;
 
 use BrianFaust\ServiceProvider\ServiceProvider;
 
 class SettingsServiceProvider extends ServiceProvider
 {
-    public function boot()
+    public function boot(): void
     {
         $this->publishMigrations();
 
         $this->publishConfig();
     }
 
-    public function register()
+    public function register(): void
     {
         parent::register();
 
@@ -33,12 +35,12 @@ class SettingsServiceProvider extends ServiceProvider
         });
     }
 
-    public function provides()
+    public function provides(): array
     {
         return array_merge(parent::provides(), ['settings-manager']);
     }
 
-    public function getPackageName()
+    public function getPackageName(): string
     {
         return 'settings';
     }
