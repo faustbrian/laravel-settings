@@ -22,9 +22,9 @@ declare(strict_types=1);
 
 namespace BrianFaust\Settings;
 
-use BrianFaust\ServiceProvider\ServiceProvider;
+use BrianFaust\ServiceProvider\AbstractServiceProvider;
 
-class SettingsServiceProvider extends ServiceProvider
+class SettingsServiceProvider extends AbstractServiceProvider
 {
     public function boot(): void
     {
