@@ -10,18 +10,6 @@ Require this package, with [Composer](https://getcomposer.org/), in the root dir
 $ composer require faustbrian/laravel-settings
 ```
 
-And then include the service provider within `app/config/app.php`.
-
-``` php
-BrianFaust\Settings\SettingsServiceProvider::class
-```
-
-And, for convenience, add a facade alias to this same file at the bottom:
-
-``` php
-'Setting' => BrianFaust\Settings\Facades\Setting
-```
-
 ## Configuration
 
 Laravel Settings supports optional configuration.
@@ -80,19 +68,11 @@ Setting::forget($key);
 Setting::flush();
 ```
 
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
-
 ## Testing
 
 ``` bash
 $ phpunit
 ```
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
 

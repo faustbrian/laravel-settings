@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel Settings.
  *
@@ -14,35 +11,27 @@ declare(strict_types=1);
 
 namespace BrianFaust\Settings;
 
-use BrianFaust\ServiceProvider\AbstractServiceProvider;
+use Illuminate\Support\ServiceProvider;
 
-class SettingsServiceProvider extends AbstractServiceProvider
+class SettingsServiceProvider extends ServiceProvider
 {
-    public function boot(): void
+    public function boot()
     {
-        $this->publishMigrations();
+        $this->publishes([
+            __DIR__.'/../database/migrations' => database_path('migrations'),
+        ], 'migrations');
 
-        $this->publishConfig();
+        $this->publishes([
+            __DIR__.'/../config/laravel-settings.php' => config_path('laravel-settings.php'),
+        ], 'config');
     }
 
-    public function register(): void
+    public function register()
     {
-        parent::register();
-
-        $this->mergeConfig();
+        $this->mergeConfigFrom(__DIR__.'/../config/laravel-settings.php', 'laravel-settings');
 
         $this->app->singleton('settings-manager', function ($app) {
             return new SettingsManager($app);
         });
-    }
-
-    public function provides(): array
-    {
-        return array_merge(parent::provides(), ['settings-manager']);
-    }
-
-    public function getPackageName(): string
-    {
-        return 'settings';
     }
 }

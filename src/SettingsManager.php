@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel Settings.
  *
@@ -33,12 +30,12 @@ class SettingsManager extends Manager
 {
     public function getDefaultDriver()
     {
-        return $this->getConfig('settings.store');
+        return $this->getConfig('laravel-settings.store');
     }
 
     public function createJsonDriver()
     {
-        $path = $this->getConfig('settings.path');
+        $path = $this->getConfig('laravel-settings.path');
 
         return new JsonStore(
             $this->app['files'], new JsonSerialiser(), new JsonUnserialiser(), $path
@@ -47,7 +44,7 @@ class SettingsManager extends Manager
 
     public function createXmlDriver()
     {
-        $path = $this->getConfig('settings.path');
+        $path = $this->getConfig('laravel-settings.path');
 
         return new XmlStore(
             $this->app['files'], new XmlSerialiser(), new XmlUnserialiser(), $path
@@ -56,7 +53,7 @@ class SettingsManager extends Manager
 
     public function createYamlDriver()
     {
-        $path = $this->getConfig('settings.path');
+        $path = $this->getConfig('laravel-settings.path');
 
         return new YamlStore(
             $this->app['files'], new YamlSerialiser(), new YamlUnserialiser(), $path
@@ -65,7 +62,7 @@ class SettingsManager extends Manager
 
     public function createYamlInlineDriver()
     {
-        $path = $this->getConfig('settings.path');
+        $path = $this->getConfig('laravel-settings.path');
 
         return new YamlInlineStore(
             $this->app['files'], new YamlInlineSerialiser(), new YamlUnserialiser(), $path
@@ -75,7 +72,7 @@ class SettingsManager extends Manager
     public function createDatabaseDriver()
     {
         $connection = $this->app['db']->connection();
-        $table = $this->getConfig('settings.table');
+        $table = $this->getConfig('laravel-settings.table');
 
         return new DatabaseStore($connection, $table);
     }
