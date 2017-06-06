@@ -15,6 +15,9 @@ use Illuminate\Support\ServiceProvider;
 
 class SettingsServiceProvider extends ServiceProvider
 {
+    /**
+     * Bootstrap any application services.
+     */
     public function boot()
     {
         $this->publishes([
@@ -26,6 +29,9 @@ class SettingsServiceProvider extends ServiceProvider
         ], 'config');
     }
 
+    /**
+     * Register any application services.
+     */
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../config/laravel-settings.php', 'laravel-settings');
