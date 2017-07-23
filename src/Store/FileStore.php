@@ -11,9 +11,9 @@
 
 namespace BrianFaust\Settings\Store;
 
+use Illuminate\Filesystem\Filesystem;
 use BrianFaust\Cerealizer\Contracts\Serialiser;
 use BrianFaust\Cerealizer\Contracts\Unserialiser;
-use Illuminate\Filesystem\Filesystem;
 
 abstract class FileStore extends Store
 {
@@ -43,7 +43,7 @@ abstract class FileStore extends Store
 
     private function setPath($path)
     {
-        if (!$this->files->exists($path)) {
+        if (! $this->files->exists($path)) {
             $result = $this->files->put($path, '');
 
             if ($result === false) {
@@ -51,7 +51,7 @@ abstract class FileStore extends Store
             }
         }
 
-        if (!$this->files->isWritable($path)) {
+        if (! $this->files->isWritable($path)) {
             throw new NotWriteableException("$path is not writable.");
         }
 
