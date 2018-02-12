@@ -15,8 +15,8 @@ namespace BrianFaust\Tests\Settings\Facades;
 
 use BrianFaust\Settings\Facades\Setting;
 use BrianFaust\Settings\SettingsManager;
-use GrahamCampbell\TestBenchCore\FacadeTrait;
 use BrianFaust\Tests\Settings\AbstractTestCase;
+use GrahamCampbell\TestBenchCore\FacadeTrait;
 
 class FacadeTest extends AbstractTestCase
 {

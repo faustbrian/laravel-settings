@@ -13,20 +13,20 @@ declare(strict_types=1);
 
 namespace BrianFaust\Settings;
 
-use Illuminate\Support\Manager;
-use BrianFaust\Settings\Store\XmlStore;
-use BrianFaust\Settings\Store\JsonStore;
-use BrianFaust\Settings\Store\YamlStore;
-use BrianFaust\Settings\Store\MemoryStore;
-use BrianFaust\Settings\Store\DatabaseStore;
-use BrianFaust\Settings\Store\YamlInlineStore;
-use BrianFaust\Cerealizer\Serialisers\XmlSerialiser;
 use BrianFaust\Cerealizer\Serialisers\JsonSerialiser;
-use BrianFaust\Cerealizer\Serialisers\YamlSerialiser;
-use BrianFaust\Cerealizer\Unserialisers\XmlUnserialiser;
-use BrianFaust\Cerealizer\Unserialisers\JsonUnserialiser;
-use BrianFaust\Cerealizer\Unserialisers\YamlUnserialiser;
+use BrianFaust\Cerealizer\Serialisers\XmlSerialiser;
 use BrianFaust\Cerealizer\Serialisers\YamlInlineSerialiser;
+use BrianFaust\Cerealizer\Serialisers\YamlSerialiser;
+use BrianFaust\Cerealizer\Unserialisers\JsonUnserialiser;
+use BrianFaust\Cerealizer\Unserialisers\XmlUnserialiser;
+use BrianFaust\Cerealizer\Unserialisers\YamlUnserialiser;
+use BrianFaust\Settings\Store\DatabaseStore;
+use BrianFaust\Settings\Store\JsonStore;
+use BrianFaust\Settings\Store\MemoryStore;
+use BrianFaust\Settings\Store\XmlStore;
+use BrianFaust\Settings\Store\YamlInlineStore;
+use BrianFaust\Settings\Store\YamlStore;
+use Illuminate\Support\Manager;
 
 class SettingsManager extends Manager
 {

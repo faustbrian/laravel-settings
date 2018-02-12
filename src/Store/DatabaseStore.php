@@ -144,6 +144,7 @@ class DatabaseStore extends Store
                 $value = $row->value;
             } else {
                 $msg = 'Expected array or object, got '.gettype($row);
+
                 throw new \UnexpectedValueException($msg);
             }
 
@@ -157,7 +158,7 @@ class DatabaseStore extends Store
     {
         $query = $this->connection->table($this->table);
 
-        if (! $insert) {
+        if (!$insert) {
             foreach ($this->extraColumns as $key => $value) {
                 $query->where($key, '=', $value);
             }
