@@ -5,27 +5,27 @@ declare(strict_types=1);
 /*
  * This file is part of Laravel Settings.
  *
- * (c) Brian Faust <hello@brianfaust.de>
+ * (c) Brian Faust <hello@basecode.sh>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace BrianFaust\Settings;
+namespace Artisanry\Settings;
 
-use BrianFaust\Cerealizer\Serialisers\JsonSerialiser;
-use BrianFaust\Cerealizer\Serialisers\XmlSerialiser;
-use BrianFaust\Cerealizer\Serialisers\YamlInlineSerialiser;
-use BrianFaust\Cerealizer\Serialisers\YamlSerialiser;
-use BrianFaust\Cerealizer\Unserialisers\JsonUnserialiser;
-use BrianFaust\Cerealizer\Unserialisers\XmlUnserialiser;
-use BrianFaust\Cerealizer\Unserialisers\YamlUnserialiser;
-use BrianFaust\Settings\Store\DatabaseStore;
-use BrianFaust\Settings\Store\JsonStore;
-use BrianFaust\Settings\Store\MemoryStore;
-use BrianFaust\Settings\Store\XmlStore;
-use BrianFaust\Settings\Store\YamlInlineStore;
-use BrianFaust\Settings\Store\YamlStore;
+use Artisanry\Cerealizer\Serialisers\JsonSerialiser;
+use Artisanry\Cerealizer\Serialisers\XmlSerialiser;
+use Artisanry\Cerealizer\Serialisers\YamlInlineSerialiser;
+use Artisanry\Cerealizer\Serialisers\YamlSerialiser;
+use Artisanry\Cerealizer\Unserialisers\JsonUnserialiser;
+use Artisanry\Cerealizer\Unserialisers\XmlUnserialiser;
+use Artisanry\Cerealizer\Unserialisers\YamlUnserialiser;
+use Artisanry\Settings\Store\DatabaseStore;
+use Artisanry\Settings\Store\JsonStore;
+use Artisanry\Settings\Store\MemoryStore;
+use Artisanry\Settings\Store\XmlStore;
+use Artisanry\Settings\Store\YamlInlineStore;
+use Artisanry\Settings\Store\YamlStore;
 use Illuminate\Support\Manager;
 
 class SettingsManager extends Manager

@@ -1,16 +1,16 @@
 # Laravel Settings
 
-[![Build Status](https://img.shields.io/travis/faustbrian/Laravel-Settings/master.svg?style=flat-square)](https://travis-ci.org/faustbrian/Laravel-Settings)
-[![PHP from Packagist](https://img.shields.io/packagist/php-v/faustbrian/laravel-settings.svg?style=flat-square)]()
-[![Latest Version](https://img.shields.io/github/release/faustbrian/Laravel-Settings.svg?style=flat-square)](https://github.com/faustbrian/Laravel-Settings/releases)
-[![License](https://img.shields.io/packagist/l/faustbrian/Laravel-Settings.svg?style=flat-square)](https://packagist.org/packages/faustbrian/Laravel-Settings)
+[![Build Status](https://img.shields.io/travis/artisanry/Settings/master.svg?style=flat-square)](https://travis-ci.org/artisanry/Settings)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/artisanry/settings.svg?style=flat-square)]()
+[![Latest Version](https://img.shields.io/github/release/artisanry/Settings.svg?style=flat-square)](https://github.com/artisanry/Settings/releases)
+[![License](https://img.shields.io/packagist/l/artisanry/Settings.svg?style=flat-square)](https://packagist.org/packages/artisanry/Settings)
 
 ## Installation
 
 Require this package, with [Composer](https://getcomposer.org/), in the root directory of your project.
 
 ``` bash
-$ composer require faustbrian/laravel-settings
+$ composer require artisanry/settings
 ```
 
 ## Configuration
@@ -20,7 +20,7 @@ Laravel Settings supports optional configuration.
 To get started, you'll need to publish all configurations:
 
 ```bash
-$ php artisan vendor:publish --provider="BrianFaust\Settings\SettingsServiceProvider" --tag="config"
+$ php artisan vendor:publish --provider="Artisanry\Settings\SettingsServiceProvider" --tag="config"
 ```
 
 This will create a `config/settings.php` file in your app that you can modify to set your configuration. Also, make sure you check for changes to the original config file in this package between releases.
@@ -30,7 +30,7 @@ This will create a `config/settings.php` file in your app that you can modify to
 To get started, you'll need to publish all migrations:
 
 ```bash
-$ php artisan vendor:publish --provider="BrianFaust\Settings\ServiceProvider" --tag="migrations"
+$ php artisan vendor:publish --provider="Artisanry\Settings\ServiceProvider" --tag="migrations"
 ```
 
 And then run the migrations to setup the database table.
@@ -79,7 +79,7 @@ $ phpunit
 
 ## Security
 
-If you discover a security vulnerability within this package, please send an e-mail to hello@brianfaust.me. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this package, please send an e-mail to hello@basecode.sh. All security vulnerabilities will be promptly addressed.
 
 ## Credits
 
@@ -88,7 +88,7 @@ If you discover a security vulnerability within this package, please send an e-m
 
 ## License
 
-[MIT](LICENSE) © [Brian Faust](https://brianfaust.me)
+[MIT](LICENSE) © [Brian Faust](https://basecode.sh)
 
 <!-- ## To-Do
 - Drivers

@@ -1,12 +1,12 @@
 {
-    "name": "faustbrian/laravel-settings",
+    "name": "artisanry/settings",
     "description": "Persistent Settings with multiple Drivers for Laravel 5",
-    "keywords": ["laravel", "framework", "Laravel-settings", "Laravel settings", "Brian Faust", "faustbrian"],
+    "keywords": ["laravel", "framework", "Laravel-settings", "Laravel settings"],
     "license": "MIT",
     "authors": [{
         "name": "Brian Faust",
-        "email": "hello@brianfaust.me",
-        "homepage": "https://brianfaust.me"
+        "email": "hello@basecode.sh",
+        "homepage": "https://basecode.sh"
     }],
     "require": {
         "php": "^7.1",
@@ -20,12 +20,12 @@
     },
     "autoload": {
         "psr-4": {
-            "BrianFaust\\Settings\\": "src/"
+            "Artisanry\\Settings\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "BrianFaust\\Tests\\Settings\\": "tests"
+            "Artisanry\\Tests\\Settings\\": "tests"
         }
     },
     "config": {
@@ -38,10 +38,10 @@
         },
         "laravel": {
             "providers": [
-                "BrianFaust\\Settings\\SettingsServiceProvider"
+                "Artisanry\\Settings\\SettingsServiceProvider"
             ],
             "aliases": {
-                "Settings": "BrianFaust\\Settings\\Facades\\Settings"
+                "Settings": "Artisanry\\Settings\\Facades\\Settings"
             }
         }
     },

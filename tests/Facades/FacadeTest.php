@@ -5,17 +5,17 @@ declare(strict_types=1);
 /*
  * This file is part of Laravel Settings.
  *
- * (c) Brian Faust <hello@brianfaust.de>
+ * (c) Brian Faust <hello@basecode.sh>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace BrianFaust\Tests\Settings\Facades;
+namespace Artisanry\Tests\Settings\Facades;
 
-use BrianFaust\Settings\Facades\Setting;
-use BrianFaust\Settings\SettingsManager;
-use BrianFaust\Tests\Settings\AbstractTestCase;
+use Artisanry\Settings\Facades\Setting;
+use Artisanry\Settings\SettingsManager;
+use Artisanry\Tests\Settings\AbstractTestCase;
 use GrahamCampbell\TestBenchCore\FacadeTrait;
 
 class FacadeTest extends AbstractTestCase
