@@ -7,7 +7,7 @@
         "Laravel-settings",
         "Laravel settings"
     ],
-    "license": "MIT",
+    "license": "MPL-2.0",
     "authors": [
         {
             "name": "Brian Faust",
